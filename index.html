@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Gibbet Apprentice</title>
+  <meta name="description" content="A dark, grounded roleplaying game about a novice necromancer in a plague-struck town.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <div id="app">
+    <aside id="sidebar">
+      <header class="brand">
+        <h1>The Gibbet Apprentice</h1>
+        <div id="clock" class="clock"></div>
+      </header>
+
+      <section class="panel" id="stats-panel">
+        <h2>Condition</h2>
+        <div id="stats"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Satchel</h2>
+        <div id="inventory"></div>
+      </section>
+
+      <section class="panel">
+        <h2>The Bound</h2>
+        <div id="thralls"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Learning</h2>
+        <div id="spells"></div>
+      </section>
+
+      <div class="controls">
+        <button id="btn-sound" class="ghost" type="button">Sound: off</button>
+        <button id="btn-restart" class="ghost" type="button">Abandon</button>
+      </div>
+    </aside>
+
+    <main id="main">
+      <div id="location" class="location"></div>
+      <article id="narrative" class="narrative" aria-live="polite"></article>
+      <nav id="choices" class="choices"></nav>
+      <section id="journal" class="journal">
+        <h2>Journal</h2>
+        <ol id="log"></ol>
+      </section>
+    </main>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
