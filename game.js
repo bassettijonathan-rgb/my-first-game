@@ -1395,7 +1395,11 @@ $('#btn-sound').addEventListener('click', (e) => {
 });
 $('#btn-restart').addEventListener('click', () => {
   if (!S || S.over) return;
-  if (confirm('Abandon this life and begin again?')) { clearSave(); S = newState(); intro(); }
+  const back = { lines: elNarr.innerHTML, title: elLoc.textContent, choices: currentChoices };
+  show('Abandon', ['Abandon this life and begin again? Everything you have done will be lost.'], [
+    { label: 'Yes, begin again', fn: () => { clearSave(); C = null; S = newState(); intro(); } },
+    { label: 'No, go back', fn: () => { elLoc.textContent = back.title; elNarr.innerHTML = back.lines; renderChoices(back.choices); } },
+  ]);
 });
 
 // ---------------------------------------------------------------- title
